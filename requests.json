@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "9484827a-fa64-4068-9ee7-e035463f9bb9",
+		"name": "PYCON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3378209"
+	},
+	"item": [
+		{
+			"name": "News",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topics\": [\"Messi\"],\n    \"email\": \"worksops.gilbert.dev@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/v1/news/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"v1",
+						"news",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Research",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"RAG techniques\",\n    \"max_results\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/v1/research/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"v1",
+						"research",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "financial",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/csv",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gilbert/Documents/experiments/assistant-pycon25/transactions2.csv"
+						},
+						{
+							"key": "goal",
+							"value": "Quiero comprar una mansión de 100000 de USD",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/v1/expenses/plan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"v1",
+						"expenses",
+						"plan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assistant",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/csv",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gilbert/Documents/experiments/assistant-pycon25/transactions2.csv",
+							"disabled": true
+						},
+						{
+							"key": "goal",
+							"value": "Quiero comprar una mansión de 100000 de USD",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "input",
+							"value": "Was Salomon Rondon a player of Pachuca?",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "worksops.gilbert.dev@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/v1/assistant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"v1",
+						"assistant"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
